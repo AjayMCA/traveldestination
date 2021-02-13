@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <h2>Monuments</h2>  
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Sr_No</th>
+                <th>Place</th>
+                <th>District</th>
+                <th>State</th>
+                <th>Visit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor = "let mn of monument">
+                <td>{{mn.s_id}}</td>
+                <td>{{mn.description}}</td>
+                <td>{{mn.district}}</td>
+                <td>{{mn.state}}</td>
+                <td> <button class="btn btn-success">Click Here</button></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>      
+  </div>

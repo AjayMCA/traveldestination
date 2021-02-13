@@ -1,0 +1,130 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>"Traveling is something really unique and there are only so
+                many things we can learn. Travel really can not be taught,
+                you can learn about other cultures, but you can not be fully
+                taught unless you experience it.
+                Scientifically, it is shown that traveling also gains you
+                more confidence and a great way to develop cultural sensitivity."</p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Your Query</h4>
+                <hr>
+                <form [formGroup]="feedback" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <fa name="cog" animation="spin"></fa>
+                        <label>Name</label>
+                        <input type="text" formControlName="name" class="form-control" id="name" />
+                        <div *ngIf="feedback.get('name').invalid && (feedback.get('name').dirty ||
+                        feedback.get('name').touched)" class="alert alert-danger">
+                            <div *ngIf="feedback.get('name').errors.required">
+                                Name is required.
+                            </div>
+                            <div *ngIf="feedback.get('name').errors.minlength">
+                                Name must be at least 5 characters long.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <fa name="cog" animation="spin"></fa>
+                        <label>Email</label>
+                        <input type="text" formControlName="email" class="form-control" id="email" />
+                    </div>
+                    <div class="form-group">
+                        <fa name="cog" animation="spin"></fa>
+                        <label>Message</label>
+                        <textarea rows="4" formControlName="message" class="form-control" id="msg">
+                        </textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="jumbotron">
+        <h2>Message</h2>
+        <ul class="list-group" *ngFor="let msg of msgList">
+            <li class="list-group-item">Name : {{msg.name}}</li>
+            <li class="list-group-item">Email : {{msg.email}}</li>
+            <li class="list-group-item">Message : {{msg.message}}
+                <button class="btn btn-danger float-right" (click)="delete(msg._id)">Delete</button>
+                <button class="btn btn-info float-right" data-toggle="modal" data-target="#myModal" (click)="editFeedback(msg._id,msg.name,msg.email,msg.message)">Update</button>
+                <!-- Modal -->
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <form [formGroup]="editFbk">
+                                    <div class="form-group">
+                                        <fa name="cog" animation="spin"></fa>
+                                        <label>Name</label>
+                                        <input type="text" formControlName="name" class="form-control" [(ngModel)]="fName" />
+                                    </div>
+                                    <div class="form-group">
+                                        <fa name="cog" animation="spin"></fa>
+                                        <label>Email</label>
+                                        <input type="text" formControlName="email" class="form-control" [(ngModel)]="fEmail"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <fa name="cog" animation="spin"></fa>
+                                        <label>Message</label>
+                                        <textarea rows="4" formControlName="message" class="form-control" [(ngModel)]="fMessage">
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary float-right" (click)="updateFeedbackForm()" >Submit</button>
+                                <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+            <br>
+        </ul>
+    </div>
+</div>
+
+<br>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col">
+            <span style="font-family: cursive;">Services</span><br>
+            <a routerLink="/adventure-Journey">Adventure</a><br>
+            <a routerLink="/nature-Journey">Nature</a><br>
+            <a routerLink="/devotional-Journey">Devotinoal</a><br>
+            <a routerLink="/haunted-Journey">Haunted</a><br>
+            <a routerLink="/monument">Mounment</a>
+        </div>
+        <div class="col">
+            <span style="font-family: cursive;">Media</span><br>
+            <a href="https://www.facebook.com/karanMaurrya" target="_blank">Facebook</a><br>
+            <a href="https://twitter.com/ajay_skyblue" target="_blank">Twitter</a><br>
+            <a href="#" target="_blank">Instagram</a>
+        </div>
+        <div class="col">
+            <span style="font-family: cursive;">Contact Us</span><br>
+            <span>India Tourism Consulting</span><br>
+            <span>Contact : +91 9654093625</span><br>
+            <span>Email : ajaymauryamca@gmail.com</span><br>
+        </div>
+    </div>
+</div>
+<br>

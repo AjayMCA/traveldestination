@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <h2>Naturel Journey</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Sr No</th>
+        <th>Description</th>
+        <th>District</th>
+        <th>State</th>
+        <th>Visit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr let *ngFor="let nj of naturalJourney">
+        <td>{{nj.s_id}}</td>
+        <td>{{nj.description}}</td>
+        <td>{{nj.district}}</td>
+        <td>{{nj.state}}</td>
+        <td>
+          <button class="btn btn-success">Click Here</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

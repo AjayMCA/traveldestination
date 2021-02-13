@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <h2>Adventure Journey</h2>
+  <div class="row">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Sr No</th>
+            <th>Description</th>
+            <th>State</th>
+            <th>District</th>
+            <th>Visit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr let *ngFor="let adj of adventureJourney">
+            <td>{{adj.s_id}}</td>
+            <td>{{adj.description}}</td>
+            <td>{{adj.state}}</td>
+            <td>{{adj.district}}</td>
+            <td>
+              <button type="button" class="btn btn-success" (click)="showTab(adj)">Click Here</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>

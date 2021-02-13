@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <h2>Haunted Journey</h2>           
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Sr No</th>
+        <th>Description</th>
+        <th>District</th>
+        <th>State</th>
+        <th>Visit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let hj of hauntedJourney">
+        <td>{{hj.s_id}}</td>
+        <td>{{hj.description}}</td>
+        <td>{{hj.district}}</td>
+        <td>{{hj.state}}</td>
+        <td><button class="btn btn-success">Click Here</button></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+

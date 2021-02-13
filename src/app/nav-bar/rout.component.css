@@ -1,0 +1,25 @@
+
+/* Style the links inside the navigation bar */
+  .navbar-nav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 8px 10px;
+    text-decoration: none;
+    font-size: 17px;
+    border-bottom: 3px solid transparent;
+  }
+  
+  .navbar-nav a:hover {
+    border-bottom: 3px solid red;
+  }
+  
+  .navbar-nav a.active {
+    border-bottom: 3px solid red;
+  }
+
+  /* media screen for navigation */
+  @media screen and (max-width : 538px){
+   
+  }
